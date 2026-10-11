@@ -17,6 +17,19 @@
 - Herramientas MCP con acceso limitado; no entregar tokens de administrador a ejecutores.
 - Aislar sandboxes y ejecución arbitraria; no usar workflows de PR no confiables con secretos privilegiados.
 
+## Host productivo: aislamiento y cleanup
+
+- La existencia de tests no autoriza ejecutar pruebas sobre un servidor que presta servicios a otros usuarios. Preferir entornos aislados. Sobre producción, solo operaciones autorizadas y no disruptivas, con baseline pre/post y límites de recursos.
+- Cada prueba debe retirar **todos sus recursos temporales**, también después de error o interrupción: contenedores, imágenes/layers y cachés creadas, volúmenes, redes, ficheros, secretos, procesos y jobs que no sean parte del despliegue final expresamente aprobado.
+- Verificar que los servicios preexistentes permanecen sanos y que no existen residuos experimentales (`CLEANUP=PASS`). Si no puede acreditarse, HOLD. No limpiar globalmente Docker ni borrar recursos ajenos, incluso si la limpieza total parece más rápida.
+
+## Publicación privada de imágenes Docker
+
+- Registro obligatorio: **GitHub Container Registry (GHCR, `ghcr.io`)**, en namespace autorizado. No Docker Hub ni registros públicos como fallback.
+- Cada imagen debe publicarse como paquete **PRIVATE**, con visibilidad verificada **explícitamente** en GitHub Packages antes de usarla o declarar el trabajo completado. Las políticas y visibilidad del repositorio no bastan como verificación del paquete.
+- En Actions, preferir `GITHUB_TOKEN` con `packages: write` limitado al job publicador y `contents: read` donde aplique. Los consumidores deben tener exclusivamente permiso `read:packages` equivalente y secretos protegidos.
+- No incluir secretos, datos de usuario o ficheros productivos en build context, Dockerfile, capas, argumentos ni logs. Etiquetar origen/versiones y desplegar por digest o versión inmutable con rollback.
+
 ## Cambios de alto riesgo
 
 Requerir issue con límites, revisión independiente, plan de rollback, pruebas y aprobación correspondiente antes de desplegar, borrar, migrar datos o modificar permisos.

@@ -10,6 +10,8 @@ Plantilla reutilizable de **gobernanza, ingeniería y colaboración con agentes 
 - **Coordinación escalable:** Owner / Coordinator / Iteration Manager opcional / ejecutores Codex u otros agentes.
 - **Ciclo verificable:** problema → alcance → ejecución → pruebas → revisión → merge → borrado de rama.
 - **Seguridad por defecto:** permisos mínimos, clasificación de datos, fuentes no confiables y operaciones sensibles sujetas a gates.
+- **Entornos productivos protegidos:** toda prueba en un servidor en uso debe ser no disruptiva, aislada y dejarlo sin restos de recursos temporales, con limpieza verificada.
+- **Imágenes Docker privadas:** publicación exclusivamente en **GitHub Container Registry (GHCR, `ghcr.io`)**, con visibilidad PRIVATE del paquete comprobada; nunca Docker Hub o un registro público por defecto.
 - **Continuidad:** cada agente nuevo puede reconstruir el contexto leyendo los archivos y el estado actual de GitHub, sin depender de una conversación antigua.
 - **Complejidad proporcional:** proyecto pequeño = issue + PR; proyecto grande = charter, iteraciones y mandatos.
 
@@ -48,6 +50,8 @@ Plantilla reutilizable de **gobernanza, ingeniería y colaboración con agentes 
 4. Los documentos no sustituyen el estado de GitHub; contrastar información que puede caducar.
 5. Tras un merge confirmado, eliminar la rama de trabajo si no tiene dependencias; conservar ramas protegidas.
 6. Las automatizaciones deben reducir trabajo humano, sin ampliar implícitamente sus permisos.
+7. Toda prueba en un host productivo debe preservar los servicios existentes y terminar con **CLEANUP=PASS**; nunca realizar `docker system prune` indiscriminado.
+8. Toda imagen Docker publicada debe alojarse **de forma privada en GHCR**, comprobando visibilidad y permisos de acceso.
 7. **Solo se prueban el código y su comportamiento.** No ejecutar tests automáticos de Markdown, enlaces, estructura o contenido de documentación; los cambios exclusivamente documentales se marcan `tests: N/A`.
 
 **Recomendación de continuidad:** usa el Charter y los issues para transmitir el contexto; esto es una práctica de trabajo, no un test ni una condición de CI documental.

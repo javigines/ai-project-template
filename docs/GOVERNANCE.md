@@ -36,6 +36,14 @@ El Owner puede ajustar la matriz **en el Charter o mandato**, nunca por insinuac
 - Un cambio exclusivamente de Markdown, ADRs o documentación lleva `tests: N/A`; no se requieren tests ni CI para documentación, enlaces o estructura documental.
 - Si código y documentación cambian juntos, los tests se limitan al código. Las revisiones y restricciones de seguridad siguen vigentes.
 
+## Norma transversal — protección de producción y eliminación de residuos
+
+La infraestructura productiva de cada proyecto (p. ej. un Mac Mini compartido) **no es un sandbox desechable**. Toda prueba autorizada que la toque debe proteger servicios existentes: obtener baseline sanitario, limitar CPU/RAM/I/O/disco/red, evitar reinicios o cambios ajenos, aislar recursos propios, preparar cleanup también para fallos y cancelaciones y verificar salud y ausencia de residuos al terminar (`CLEANUP=PASS/HOLD`).
+
+Eliminar únicamente recursos temporales propios, nunca recursos productivos o preexistentes. **Prohibido `docker system prune` global y comandos equivalentes sin aislamiento**. Solo se conservan los artefactos duraderos expresamente autorizados para el despliegue final. Si no se puede demostrar seguridad o limpieza, HOLD y escalado.
+
+Si se **publica** una imagen Docker, usar solo **GitHub Container Registry (`ghcr.io`)**, configurar y **verificar visibilidad PRIVATE del paquete**, permisos mínimos y referencias versionadas/digest. No publicar en Docker Hub, no hacer fallback a repositorios públicos ni incluir secretos en imágenes. Las acciones de publicación y despliegue siguen sujetas a sus gates.
+
 ## Fuentes de verdad
 
 - **Issues:** requisitos, tareas, responsables, estado y bloqueos.

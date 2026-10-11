@@ -23,7 +23,14 @@
 - Impacto esperado y posibles regresiones:
 - Rollback / recuperación si aplica:
 
-## Revisión y decisiones
+## Producción y contenedores (solo si aplica)
+
+- ¿Se utilizó un host productivo? NO / SÍ (cuál, con autorización)
+- Servicios previos, límites y baseline final: N/A / HOST_NONINTERFERENCE=PASS / HOLD con evidencia
+- Recursos temporales propios retirados: N/A / CLEANUP=PASS / HOLD; sin prune global
+- Imagen Docker publicada: NO / SÍ. Si SÍ, indicar referencia/digest GHCR y **GHCR_PRIVATE=PASS** confirmado por visibilidad de paquete
+- Ningún secreto incorporado a imágenes: SÍ / UNKNOWN (explicar)
+
 
 - ADR(s) actualizado(s), si aplica:
 - Review independiente requerida y resultado:

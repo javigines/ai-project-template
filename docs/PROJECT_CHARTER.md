@@ -27,8 +27,8 @@
 ## 4. Restricciones
 
 - **Datos:** [Privacidad, retención, secretos, regulación.]
-- **Infraestructura:** [Host, servicios, costes, acceso.]
-- **Dependencias:** [Sistemas internos/externos y permisos.]
+- **Infraestructura:** [Host, servicios productivos preexistentes, limitaciones de no interferencia, cleanup de pruebas, costes, acceso. Por defecto: producción protegida y sin residuos experimentales.]
+- **Dependencias:** [Sistemas internos/externos y permisos. Si se publican imágenes Docker, exclusivamente GHCR privado con permisos por paquete verificados.]
 - **Presupuesto:** [Límites si aplican.]
 
 ## 5. Autonomía autorizada

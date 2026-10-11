@@ -23,6 +23,13 @@
 - Resolver comentarios pendientes o documentar el bloqueo antes de solicitar merge.
 - Utilizar .github/PULL_REQUEST_TEMPLATE.md como contrato de entrega.
 
+## 3 bis. Si un entorno productivo se utiliza
+
+- El host está vivo y puede alojar otros servicios: probar sin interferir con ellos, registrar baseline, limitar recursos y evitar cambios fuera del scope.
+- Planificar desde el principio la limpieza de cada recurso experimental creado. Cleanup en éxito, fallo, interrupción y cancelación. No hacer prune global ni tocar recursos ajenos.
+- Antes de cerrar reportar salud del host y **CLEANUP=PASS**. Los artefactos duraderos no experimentales que se conserven deben contar con autorización explícita.
+- Si se publican imágenes Docker, usar **solo GHCR privado** con visibilidad verificada de cada paquete, tokens mínimos y referencia de versión/digest. No desplegar solo por haber publicado.
+
 ## 4. Merge y cierre
 
 1. Comprobar que la PR corresponde al issue y que los cambios no amplían el alcance.

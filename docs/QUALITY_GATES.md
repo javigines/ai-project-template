@@ -27,6 +27,13 @@ Las afirmaciones de aceptación se sustentan en **evidencias comprobables** cuan
 | R2 — Sensible | Datos reales, permisos, infraestructura, integración externa | Threat assessment + Owner/política + revisión independiente |
 | R3 — Irreversible | Borrados, migración destructiva, pagos, deploy crítico | Autorización explícita, backup/rollback y pruebas de recuperación |
 
+## Gates de operación productiva y distribución de imágenes
+
+- **HOST_NONINTERFERENCE=PASS** cuando las pruebas ejecutadas en un host productivo no alteran servicios ajenos y respetan recursos/alcance autorizados. Si no se ha usado producción: N/A.
+- **CLEANUP=PASS** cuando no quedan restos temporales creados por la prueba y los servicios preexistentes vuelven al baseline sano. Si queda algo o no se puede verificar: HOLD, sin limpieza global.
+- **GHCR_PRIVATE=PASS** solamente cuando una imagen publicada está efectivamente en `ghcr.io` como paquete PRIVATE con permisos correctos. Publicación no efectuada: N/A. Un repositorio privado no es evidencia suficiente.
+- Estos gates son de **operación y seguridad**, no tests automáticos del contenido de Markdown o documentación.
+
 ## DoD genérica
 
 - [ ] Objetivo e issue documentados; cambios dentro del scope.
@@ -35,6 +42,8 @@ Las afirmaciones de aceptación se sustentan en **evidencias comprobables** cuan
 - [ ] Feedback y reviews aplicables resueltos.
 - [ ] ADR actualizado si cambió una decisión duradera.
 - [ ] Plan de rollback/recuperación si procede.
+- [ ] Si se tocó producción: servicios ajenos intactos, baseline final sano y recursos experimentales eliminados (`CLEANUP=PASS`) o HOLD justificado.
+- [ ] Si se publicó Docker: solo GHCR con paquete PRIVATE y acceso mínimo, visibilidad verificada (`GHCR_PRIVATE=PASS`) o N/A.
 - [ ] PR mergeada bajo autorización.
 - [ ] Rama remota efímera eliminada/verificada, salvo dependencia declarada.
 - [ ] Issue/estado y próximos pasos actualizados.
