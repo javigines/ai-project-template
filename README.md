@@ -48,5 +48,6 @@ Plantilla reutilizable de **gobernanza, ingeniería y colaboración con agentes 
 4. Los documentos no sustituyen el estado de GitHub; contrastar información que puede caducar.
 5. Tras un merge confirmado, eliminar la rama de trabajo si no tiene dependencias; conservar ramas protegidas.
 6. Las automatizaciones deben reducir trabajo humano, sin ampliar implícitamente sus permisos.
+7. **Solo se prueban el código y su comportamiento.** No ejecutar tests automáticos de Markdown, enlaces, estructura o contenido de documentación; los cambios exclusivamente documentales se marcan `tests: N/A`.
 
 **Primer gate de cualquier proyecto:** una persona o agente recién incorporado debe poder explicar objetivo, estado, siguiente paso y restricciones usando solo Charter + GitHub, sin handoff largo.

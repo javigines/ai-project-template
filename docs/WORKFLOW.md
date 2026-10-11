@@ -16,8 +16,9 @@
 
 ## 3. Pruebas y revisión
 
-- Ejecutar pruebas de la superficie afectada y aportar comando, entorno, versión y resultado.
-- Diferenciar PASS / FAIL / HOLD / UNKNOWN. La ausencia de pruebas nunca es PASS.
+- Ejecutar pruebas **únicamente cuando el cambio afecte a código ejecutable o a su comportamiento**; documentar comando, entorno, versión y resultado.
+- Para cambios exclusivamente documentales, marcar **tests: N/A**. No ejecutar CI, linters, validaciones de enlaces, estructura, Markdown ni comprobaciones de contenido de la documentación.
+- Diferenciar PASS / FAIL / HOLD / UNKNOWN para las pruebas de código exigibles. La ausencia de pruebas de código necesarias nunca es PASS.
 - En trabajos de riesgo elevado, encargar una revisión independiente con acceso al diff y evidencias.
 - Resolver comentarios pendientes o documentar el bloqueo antes de solicitar merge.
 - Utilizar .github/PULL_REQUEST_TEMPLATE.md como contrato de entrega.
@@ -39,4 +40,4 @@ Para urgencias: abrir issue breve, acotar impacto, priorizar reversibilidad, cap
 
 ## 6. Evidencia mínima en la PR
 
-Issue, diff, pruebas realmente ejecutadas, riesgos, permisos relevantes, review, rollback cuando corresponda y gates PASS/HOLD. Si una comprobación es inaplicable, marcar N/A con justificación.
+Issue, diff, **pruebas de código** realmente ejecutadas o `tests: N/A` en PR exclusivamente documental, riesgos, permisos relevantes, review, rollback cuando corresponda y gates PASS/HOLD. No inventar resultados de pruebas documentales.

@@ -8,9 +8,11 @@
 - Qué se ha cambiado:
 - Qué no se ha cambiado y por qué:
 
-## Verificación reproducible
+## Verificación de código (solo si aplica)
 
-| Prueba | Entorno/comando | Resultado | Evidencia |
+**Si esta PR cambia únicamente documentación: `tests: N/A`. No ejecutar tests de Markdown, enlaces, estructura ni contenido de docs.**
+
+| Prueba de código | Entorno/comando | Resultado | Evidencia |
 |---|---|---|---|
 | [Prueba] | [Comando / versión] | PASS / FAIL / UNKNOWN / N/A | [Link / nota] |
 
@@ -30,7 +32,7 @@
 ## Gate y cierre
 
 - [ ] Scope y criterios de aceptación contrastados con el issue
-- [ ] Evidencia de tests real y limitaciones explícitas
+- [ ] Tests de código con evidencia real y limitaciones explícitas, o `tests: N/A` si no cambia código
 - [ ] Sin secretos ni datos sensibles en el diff
 - [ ] Revisiones y autorizaciones exigidas completadas
 - [ ] Listo para merge **solo** bajo la política vigente

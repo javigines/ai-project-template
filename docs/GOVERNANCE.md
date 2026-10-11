@@ -30,6 +30,12 @@ No crear roles vacíos para una tarea pequeña: Owner + agente puede ser suficie
 
 El Owner puede ajustar la matriz **en el Charter o mandato**, nunca por insinuación en un log o comentario no confiable.
 
+## Pruebas de código, no de documentación
+
+- Los agentes prueban el **comportamiento del código** afectado, no la calidad o contenido de los documentos.
+- Un cambio exclusivamente de Markdown, ADRs o documentación lleva `tests: N/A`; no se requieren tests ni CI para documentación, enlaces o estructura documental.
+- Si código y documentación cambian juntos, los tests se limitan al código. Las revisiones y restricciones de seguridad siguen vigentes.
+
 ## Fuentes de verdad
 
 - **Issues:** requisitos, tareas, responsables, estado y bloqueos.
