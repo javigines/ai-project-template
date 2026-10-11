@@ -1,0 +1,30 @@
+# Entornos y secretos
+.env
+.env.*
+!.env.example
+secrets/
+private/
+exports/
+backups/
+data/private/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Entornos y artefactos
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+node_modules/
+dist/
+build/
+coverage/
+test-results/
+*.log
+.DS_Store
+
+# No uses este archivo como único control de seguridad: revisa el diff y el staging.

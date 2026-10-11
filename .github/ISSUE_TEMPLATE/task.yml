@@ -1,0 +1,45 @@
+name: Tarea de implementación
+description: Trabajo acotado con aceptación verificable
+title: "[Task] "
+body:
+  - type: markdown
+    attributes:
+      value: "Este issue es la fuente de verdad del trabajo; no incluyas secretos, historiales privados ni dumps."
+  - type: textarea
+    id: goal
+    attributes:
+      label: Objetivo y problema
+      description: Qué se quiere lograr y por qué
+      placeholder: Resultado observable
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Alcance y exclusiones
+      description: Qué puede y qué no puede cambiar el ejecutor
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Criterios de aceptación y evidencia
+      description: Pruebas, métricas y artefactos concretos
+    validations:
+      required: true
+  - type: dropdown
+    id: risk
+    attributes:
+      label: Riesgo inicial
+      options:
+        - R0 — solo lectura
+        - R1 — reversible
+        - R2 — sensible
+        - R3 — irreversible
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencias, permisos y restricciones
+      description: Incluir decisiones que requieran aprobación o marcar UNKNOWN

@@ -1,0 +1,36 @@
+name: Investigación / decisión
+description: Investigación delimitada antes de desarrollar
+title: "[Research] "
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Pregunta verificable
+      description: Qué incógnita concreta hay que resolver
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Hipótesis y alternativas
+    validations:
+      required: true
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: Alcance autorizado y restricciones
+      description: Read-only por defecto; explicitar accesos, datos y exclusiones
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidencia y criterios PASS / HOLD / UNKNOWN
+      description: Cómo mediremos y cuándo debemos abstenernos
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Entregable esperado y siguiente decisión
+      description: Informe, ADR, prototipo o recomendación

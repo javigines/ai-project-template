@@ -1,0 +1,35 @@
+name: Feature / mejora
+description: Definir funcionalidad y valor antes de implementarla
+title: "[Feature] "
+body:
+  - type: textarea
+    id: user_problem
+    attributes:
+      label: Necesidad y usuario afectado
+      description: Explica el problema; no solo la solución propuesta
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Comportamiento esperado
+      description: Qué debería ocurrir en la práctica
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Aceptación verificable
+      description: Cómo demostraremos que funciona
+    validations:
+      required: true
+  - type: textarea
+    id: non_goals
+    attributes:
+      label: Fuera de alcance y alternativas
+      description: Qué no haremos y qué otras opciones valoramos
+  - type: textarea
+    id: risk
+    attributes:
+      label: Riesgo, datos, coste y dependencias
+      description: Si falta información, dejarlo como UNKNOWN
