@@ -50,8 +50,8 @@ Plantilla reutilizable de **gobernanza, ingeniería y colaboración con agentes 
 4. Los documentos no sustituyen el estado de GitHub; contrastar información que puede caducar.
 5. Tras un merge confirmado, eliminar la rama de trabajo si no tiene dependencias; conservar ramas protegidas.
 6. Las automatizaciones deben reducir trabajo humano, sin ampliar implícitamente sus permisos.
-7. Toda prueba en un host productivo debe preservar los servicios existentes y terminar con **CLEANUP=PASS**; nunca realizar `docker system prune` indiscriminado.
-8. Toda imagen Docker publicada debe alojarse **de forma privada en GHCR**, comprobando visibilidad y permisos de acceso.
 7. **Solo se prueban el código y su comportamiento.** No ejecutar tests automáticos de Markdown, enlaces, estructura o contenido de documentación; los cambios exclusivamente documentales se marcan `tests: N/A`.
+8. Toda prueba en un host productivo debe preservar los servicios existentes y terminar con **CLEANUP=PASS**; nunca realizar `docker system prune` indiscriminado.
+9. Toda imagen Docker publicada debe alojarse **de forma privada en GHCR**, comprobando visibilidad y permisos de acceso.
 
 **Recomendación de continuidad:** usa el Charter y los issues para transmitir el contexto; esto es una práctica de trabajo, no un test ni una condición de CI documental.
