@@ -50,4 +50,4 @@ Plantilla reutilizable de **gobernanza, ingeniería y colaboración con agentes 
 6. Las automatizaciones deben reducir trabajo humano, sin ampliar implícitamente sus permisos.
 7. **Solo se prueban el código y su comportamiento.** No ejecutar tests automáticos de Markdown, enlaces, estructura o contenido de documentación; los cambios exclusivamente documentales se marcan `tests: N/A`.
 
-**Primer gate de cualquier proyecto:** una persona o agente recién incorporado debe poder explicar objetivo, estado, siguiente paso y restricciones usando solo Charter + GitHub, sin handoff largo.
+**Recomendación de continuidad:** usa el Charter y los issues para transmitir el contexto; esto es una práctica de trabajo, no un test ni una condición de CI documental.
