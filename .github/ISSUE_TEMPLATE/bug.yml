@@ -1,0 +1,40 @@
+name: Bug / regresión
+description: Describir un defecto con pruebas reproducibles
+title: "[Bug] "
+body:
+  - type: textarea
+    id: symptom
+    attributes:
+      label: Comportamiento observado
+      description: Qué falla y en qué entorno, sin datos sensibles
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamiento esperado
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproducción y evidencia sanitizada
+      description: Pasos, versión, run URL, commit o fixture
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severidad propuesta
+      options:
+        - P0 — pérdida/riesgo crítico
+        - P1 — bloqueo importante
+        - P2 — defecto funcional
+        - P3 — mejora menor
+    validations:
+      required: true
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: Hipótesis, impacto y límites de conocimiento
+      description: Distinguir hechos de hipótesis y UNKNOWN
