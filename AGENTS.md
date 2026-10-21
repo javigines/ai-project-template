@@ -35,3 +35,31 @@ This repository is managed with GitHub as the system of record. **Do not rely on
 - Prefer autonomy for routine authorized steps. Escalate only architecture, scope, security, cost or irreversible decisions.
 
 See docs/templates/ITERATION_MANDATE.md and docs/templates/HANDOFF.md for multi-step or delegated work.
+
+## Optional persistent project knowledge — Memory OS
+
+Configure in this project's own instructions, **after explicit Owner setup**:
+- `memory_os_project_key`: stable project identifier (normally `owner/repository`).
+- `memory_os_scope`: `PERSONAL`, `WORK`, `MIXED-SPLIT`, or `UNRESOLVED`.
+- `memory_os_source_of_truth`: repository issues/PRs/ADRs and versioned handoff docs; Memory OS complements these sources, never replaces their current state.
+
+At the beginning of an authorized task, if a **real Memory OS MCP connection is available**, read only memories relevant to the confirmed project scope and check provenance/as-of dates. Never search both PERSONAL and WORK merely to discover which contains more data. Scope labels in this file guide tool selection; **server-side identities and grants must independently authorize access**. If the MCP connection is absent, expired, read-only, or scope is ambiguous, continue from GitHub and report `MEMORY_OS=HOLD/UNRESOLVED` rather than inventing tool results or permissions.
+
+When a durable decision, architecture change, release, or important correction happens, update the versioned project dossier and **propose** one concise, sourced memory update after deduplication. Do not save each message, transient TODO, CI log, private transcript, or unrelated personal/company detail. Writes and corrections require actual tool support, authorized scope, the Owner's consent when required, operation idempotency and verified ACK/readback; an ambiguous effect must be reconciled before retries. Mark `PREPARED_NOT_WRITTEN` if only documentation was prepared.
+
+At milestones or when changing agent/conversation, provide the current handoff and candidate memory manifest with sources. A request to "Synchronize project context with Memory OS" means **prepare a curated diff and execute only the approved changes**, not dump entire chats or bypass approvals. Do not store credentials, sensitive third-party data, company secrets, or financial details without a separate policy.
+
+### Cold start when replacing a coordinator
+
+If the Owner opens a fresh chat or agent session with only the project name and a request to resume, **do not ask for the previous conversation or a manually pasted history** as the default workflow. Resolve the configured `memory_os_project_key` and authorized scope; use **actual connector calls** to locate relevant Memory OS project memories and links (only if available); fetch the project's latest versioned dossier, changelog/ADRs and live issues/PRs from GitHub; verify reported release/runtime state against dated evidence. Reconstruct the project's purpose, ordered evolution, key decisions and rejected alternatives, current verified state, outstanding risks, permissions and **next authorized step**. Cite primary sources and mark unexamined/archived chat history as `HISTORY_GAP` rather than claiming 100% coverage. If Memory OS is unavailable, use GitHub and report the missing memory source as HOLD. Never imply the ChatGPT host will automatically invoke MCP merely because AGENTS.md exists.
+
+**Continuity acceptance is functional, not just documentary:** the real proof is that a separate, clean chat with these connected tools and the project name can reconstruct that state and proceed without a lengthy handoff. A few memories ACKED or a dossier alone does not establish `COLD_START_CONTINUITY=PASS`.
+### Coordinator-owned project memory
+
+Once the Owner has approved the project's classification and the real writer for that scope has passed its technical readiness gate, **the coordinator of this project owns routine writes and updates** to its own Memory OS project knowledge. The Memory OS General Coordinator manages cross-project governance, audits, exceptions and the central tracker—not a manual queue of each project's memory writes. During the initial handoff, keep the complete versioned history in the canonical GitHub/authorized source and use Memory OS only for sourced, durable summaries and pointers. Do not impose a lifetime limit of 5–15 memories: that was an initial selection guideline, not a coverage bound.
+
+Before first ingestion, the project's coordinator should check the current manifest's exact texts, SHA/scope/sensitivity, search the permitted scope for duplicates and revisions, propose a finite immutable batch (texts + hash) to the Owner **in this project chat**, and use the real connected MCP writer only after the Owner's relevant consent, exact preview/host approvals and technical gate. Never auto-write a whole repository or interpret this instruction as authorization to enable scopes or OAuth. The authoring workflow is blocked for a stream with a pending or AMBIGUOUS event, even if a separate project's new memories are ready; do not create a new identity to bypass it.
+
+Known as of 2026-10-21, the existing continuous writer has a **20-reservations-of-versions-per-UTC-day per-scope/profile cap (new entries and corrections)**, ≤2048 UTF-8 bytes per memory, ≤100 pending drafts, ~600s draft lifetime and stream order/ACK constraints. This per-day cap is under review for removal in approved migrations and must not be assumed removed until verified in the deployed endpoint. Safety/idempotency, correct project scope, dedupe, authenticated host consent and reconciliation remain mandatory. Do not confuse these memory limits with the size of the GitHub dossier.
+
+These are **best-effort agent instructions**, not a guarantee that ChatGPT will automatically invoke the MCP app or passively observe all conversations. Keep source scope and tool limitations explicit; if Memory OS is not configured for a cloned template project, all actions remain opt-in and documentation-only.
