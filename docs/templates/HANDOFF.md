@@ -51,4 +51,15 @@
 - **Cold-start verification:** NOT_TESTED / PASS_SCOPED / HOLD — [link to a real new-conversation reconstruction from Memory OS and GitHub, if authorized; no pasted chat context].
 
 Use this handoff as an index, **not** as a requirement that the Owner paste it into each successor's chat. A successor with connected authorized tools should recover it from project sources after a short project-name instruction. Do not claim automatic host tool invocation.
+### Coordinator-owned writer handoff
+
+- **Responsible writer:** [this project's coordinator / verified authorized ChatGPT or Codex client; do not default to Memory OS General Coordinator]
+- **Writer readiness and scope:** [confirmed project binding/grants/connector availability, technical gate, or HOLD]
+- **Finite approved manifest batch:** [source commit / immutable hash / Owner approval / count] — or NONE.
+- **Per-candidate writing status:** [NEW/UPDATE/SKIP/HOLD; requested/ACKED/AMBIGUOUS; revision and readback, sanitized references only]
+- **Stream blockers and limits:** [open AMBIGUOUS/PENDING; current daily cap if still deployed; other gate impacts].
+- **Cold-start proof:** [new coordinator fetched Memory OS + GitHub, summary and next-step verified, or NOT_TESTED].
+
+Project coordinators own ongoing, scoped Memory OS writes and keeping the dossier current once explicitly authorized. Central coordination tracks coverage and exceptions; no mandatory per-memory relay through that conversation. No bulk/import grant is inferred from this template. Historical documentation is unrestricted by the memory writer's per-item size limit.
+
 The handoff is not a bulk-write authorization. Versioned documents preserve full context; external Memory OS keeps only verified and authorized durable summaries. No claim of automatic host invocation.
