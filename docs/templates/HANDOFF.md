@@ -43,4 +43,12 @@
 - **Import approval and scope:** [actual Owner approval and finite limits; NONE otherwise]
 - **Coverage/gaps:** [what is documented but not indexed; unavailable historical chats; unknowns]
 
+## Cold-start continuity (functional gate)
+
+- **Stable project entry point:** [canonical project URL / dossier URL / live issue tracker] — scope [PERSONAL/WORK] / verified as of [timestamp].
+- **History coverage:** [full evolution documented with primary GitHub/authorized sources; missing ChatGPT/Codex transcripts PARTIAL/UNKNOWN, never silently presumed].
+- **Latest source-backed state:** [last verified release/deploy, active issues/PRs, blocks and next authorized action].
+- **Cold-start verification:** NOT_TESTED / PASS_SCOPED / HOLD — [link to a real new-conversation reconstruction from Memory OS and GitHub, if authorized; no pasted chat context].
+
+Use this handoff as an index, **not** as a requirement that the Owner paste it into each successor's chat. A successor with connected authorized tools should recover it from project sources after a short project-name instruction. Do not claim automatic host tool invocation.
 The handoff is not a bulk-write authorization. Versioned documents preserve full context; external Memory OS keeps only verified and authorized durable summaries. No claim of automatic host invocation.
