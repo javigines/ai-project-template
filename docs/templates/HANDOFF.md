@@ -32,3 +32,15 @@
 [Ramas mergeadas limpiadas, accesos no expuestos, residuos pendientes.]
 
 **Regla:** este handoff no sustituye GitHub ni constituye evidencia de algo que no se ejecutó.
+
+## Context continuity and optional Memory OS
+
+- **Project key / authorized scope:** [owner/repo] / PERSONAL | WORK | MIXED-SPLIT | UNRESOLVED
+- **Exhaustive knowledge handoff:** [versioned dossier URL and as-of timestamp, if applicable]
+- **Durable memory candidate manifest:** [URL / version, or NONE]
+- **Memory OS status:** NOT_CONFIGURED / PREPARED_NOT_WRITTEN / WRITE_ACKED_AND_READBACK / HOLD
+- **Provenance and dedup:** [sources, existing memory version found, proposed NEW/UPDATE/SKIP/HOLD; no secrets/IDs]
+- **Import approval and scope:** [actual Owner approval and finite limits; NONE otherwise]
+- **Coverage/gaps:** [what is documented but not indexed; unavailable historical chats; unknowns]
+
+The handoff is not a bulk-write authorization. Versioned documents preserve full context; external Memory OS keeps only verified and authorized durable summaries. No claim of automatic host invocation.
